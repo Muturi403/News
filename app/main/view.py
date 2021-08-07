@@ -1,19 +1,34 @@
-from flask import render_template
-from ..request import get_sources, newsdetail
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..requests import get_news_sources,get_source_articles
 
 @main.route('/')
 def index():
-  general_source = get_sources('general')
-  business_source = get_sources('business')
-  ent_source = get_sources('entertainment')
-  health_source = get_sources('health')
-  science_source = get_sources('science')
-  sport_source = get_sources('sports')
-  tech_source = get_sources('technology')
+    '''
+    View root page function that returns the index page and its data.
+    '''
+    
+    general = get_news_sources('general')
+    business = get_news_sources('business')
+    entertainment = get_news_sources('entertainment')
+    health = get_news_sources('health')
+    science = get_news_sources('science')
+    sports = get_news_sources('sports')
+    technology = get_news_sources('technology')
 
-  return render_template('index.html', general = general_source, business= business_source, enterain = ent_source, health = health_source, science = science_source, sport = sport_source, tech = tech_source)
+    title = 'Home -  News'
+    search_news = request.args.get('news_query')
+    if search_news:
+        return redirect(url_for('search',news_name=search_news))
+    else:
+        return render_template('index.html', title = title, business_sources =  business, 
+                               technology_sources = technology,sports_sources = sports,  
+                               entertainment_sources = entertainment)
 
-@main.route('/news/<id>')
+@main.route('/sources/<id>')
 def newsDetail(id):
-  news = newsdetail(id)
+  '''
+  view newsdetail page
+  '''
+  news = get_source_newsdetail(id)
   return render_template('news.html', news = news)
