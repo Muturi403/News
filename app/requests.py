@@ -29,3 +29,26 @@ def get_source_details(id):
        print(news_results)
        return news_results
      
+def process_results(news_list):
+    '''
+    Function  that processes the news result and transform them to a list of Objects
+    Args:
+        news_list: A list of dictionaries that contain news details
+    Returns :
+        news_results: A list of news objects
+    '''
+    news_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        author = news_item.get('author')
+        title = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
+        datePublished = news_item.get('publishedAt')
+        pathToImage = news_item.get('urlToImage')
+        
+        if pathToImage:
+            news_object = Article(author,title,description,pathToImage,url,datePublished)
+            news_results.append(news_object)
+        return news_results    
+     
