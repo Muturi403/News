@@ -1,0 +1,20 @@
+<div class="container">
+  <h3 style="font-size: 25px">NEWS DETAILS</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem">
+        <img src="{{detail.pathToImage}}" class="card-img-top" style="height: 18vh" alt=".image here"/>
+        <div class="card-body mt-5" style="background-color: rgb(245, 34, 227)">
+          <h5 class="card-title"><b>{{detail.title}}</b></h5>
+          <p class="card-text">{{detail.description | truncate(250)}}</p>
+          <a href="{{detail.url}}" class="btn btn-primary">Read Details</a>
+        </div>
+        <div class="card-footer">
+          <small> {{detail.datePublished}} </small>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
