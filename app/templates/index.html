@@ -1,4 +1,6 @@
-{% extends 'base.html'%} {% import 'macros.html' as macro%} {% block styles%} {{super() }}
+{% extends 'base.html'%} 
+{% import 'macros.html' as macro%} 
+{% block styles%} {{super() }}
 
 {% comment %} <link
   href="https://fonts.googleapis.com/css2?family=Aladin&display=swap"
@@ -37,7 +39,7 @@
     <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>SPORTS NEWS</strong></h3>
     <div class="row">{{ macro.displayNewsSources(sports_sources)}}</div>
   </div>
-  
+
   <div class="row pt-3">
     <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>TECHNOLOGY NEWS</strong></h3>
     <div class="row">{{ macro.displayNewsSources(technology_sources)}}</div>
