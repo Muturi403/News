@@ -2,12 +2,9 @@
 {% import 'macros.html' as macro%} 
 {% block styles%} {{super() }}
 
-{% comment %} <link
-  href="https://fonts.googleapis.com/css2?family=Aladin&display=swap"
-  rel="stylesheet"/> {% endcomment %}
+{% endblock %} 
 
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
-{% endblock %} {% block content %}
+{% block content %}
 
 <div class="container">
   <div class="row pt-3">
@@ -45,3 +42,5 @@
     <div class="row">{{ macro.displayNewsSources(technology_sources)}}</div>
   </div>
 </div>
+
+{% endblock %} 
