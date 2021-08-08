@@ -1,12 +1,9 @@
-{% comment %} <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> News Update  </title>
-        {% endif %}
+				 <link rel="stylesheet" href="{{url_for('static',filename='/index.css')}}">
+        <title> {% block title %}  {% endblock %} </title>
     </head>
     <body>
 
@@ -14,4 +11,4 @@
 
         {% endblock%}
     </body>
-</html> {% endcomment %}
+</html> 
