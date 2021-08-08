@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <!-- Add count filter to count all items in a list -->
+            <h3> Found {{ news_details| count }} matches </h3>
+                <!-- Display all the news_details -->
+            <hr>
+            <ul>
+                {{ macro.displayMovieList(movies)}}
+            </ul>
+
+        </div>
+
+    </div>
+{% endblock %}
