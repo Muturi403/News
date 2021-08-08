@@ -6,7 +6,6 @@ class NewsDetailTest(unittest.TestCase):
     '''
     Test Class to test the behavior of the News_detail class
     '''
-# Method to instatiate News_detail class to make self.new_news_detail object.
     def setUp(self):
         '''
         Set up method that will run before every Test
@@ -15,3 +14,7 @@ class NewsDetailTest(unittest.TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news_detail,News_detail))
+        
+if __name__ == '__main__':
+    unittest.main()  
+       
