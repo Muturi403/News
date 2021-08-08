@@ -1,13 +1,13 @@
 import os
 import urllib.request,json
-from .models import Source, Article
+from .models import Source, Details
 
 api_key = None
 details_url = None
 sources_url = None
 
 def configure_request(app):
-  global api_key,sources_url,articles_url
+  global api_key,sources_url,details_url
   api_key = app.config['NEWS_API_KEY']
   details_url = app.config['DETAILS_API_BASE_URL']
   sources_url = app.config['SOURCES_API_BASE_URL']
@@ -65,5 +65,25 @@ def get_news_sources(category):
         if get_sources_response['sources']:
             sources_results_list = get_sources_response['sources']
             sources_results = process_sources_results(sources_results_list)
-    return sources_results      
+    return sources_results   
+  
+def process_sources_results(sources_list):
+    '''
+    Function  that processes the news result and transform them to a list of Objects
+    Args:
+        news_list: A list of dictionaries that contain news details
+    Returns :
+        news_results: A list of news objects
+    '''
+    sources_results = []
+    for source_item in sources_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        category = source_item.get('category')
+        if category:
+            source_object = Source(id,name,description,url,category)
+            sources_results.append(source_object)
+    return sources_results     
      
