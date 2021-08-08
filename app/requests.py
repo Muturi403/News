@@ -51,4 +51,19 @@ def process_results(news_list):
             news_object = Article(author,title,description,pathToImage,url,datePublished)
             news_results.append(news_object)
         return news_results    
+      
+def get_news_sources(category):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_sources_url = details_url.format(category,api_key)
+    # print(get_news_url)
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
+        sources_results = None
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
+            sources_results = process_sources_results(sources_results_list)
+    return sources_results      
      
