@@ -25,6 +25,7 @@ def index():
     else:
         return render_template('index.html', title = title, business_sources =  business, 
                                technology_sources = technology,sports_sources = sports,  
+                               health_sources = health, science_sources = science, 
                                entertainment_sources = entertainment)
 
 @main.route('/sources/<id>')
