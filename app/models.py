@@ -7,8 +7,7 @@ class Source:
         self.name = name
         self.description = description
         self.url = url
-        self.category = category
-        
+        self.category = category        
 class Article:
     '''
     Articles class to define the articles object
@@ -23,3 +22,25 @@ class Article:
     
     def save_article(self):
         article.all_articles.append(self)  
+        
+class Review:
+  
+		all_reviews = []
+  
+		def _init_(self,source,title,urlToImage,review):
+				self.source = source
+				self.title = title
+				self.urlToImage = urlToImage
+				self.review = review
+    
+    '''
+    method that appends the review object to a class variable all reviews
+    that's an empty list
+    '''
+    def save_review(self):
+      Review.all_reviews.append(self)
+      
+      
+      @classmethod
+      def clear_reviews(cls):
+        Review.all_reviews.clear()
