@@ -1,0 +1,15 @@
+<div class="col-xs-12 col-sm-4 col-md-3 pt-3" style="height: 50vh">
+  <div class="card" style=" background-color: #cdedfd;	{% comment %} background-image: linear-gradient(319deg,#cdedfd 0%,#ffec82 37%,#ffcfd2 100% {% endcomment %});">
+    <h5 class="card-header" style="font-size: 30px">{{ source.name}}</h5>
+    <div class="card-body">
+      <p class="card-text" style="font-size: 20px;">{{source.description|truncate(240)}}</p>
+    </div>
+    <div class="card-footer">
+      <a href="/sources/{{source.id}}" class="btn btn-primary" target="_blank" ><b>Find News here.</b></a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
