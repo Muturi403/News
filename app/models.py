@@ -25,13 +25,13 @@ class Details:
         
 class Review:
   
-		all_reviews = []
+    all_reviews = []
   
-		def _init_(self,source,title,urlToImage,review):
-				self.source = source
-				self.title = title
-				self.urlToImage = urlToImage
-				self.review = review
+    def _init_(self,source,title,urlToImage,review):
+        self.source = source
+        self.title = title
+        self.urlToImage = urlToImage
+        self.review = review
     
     '''
     method that appends the review object to a class variable all reviews
@@ -41,6 +41,6 @@ class Review:
       Review.all_reviews.append(self)
       
       
-      @classmethod
-      def clear_reviews(cls):
-        Review.all_reviews.clear()
+    @classmethod
+    def clear_reviews(cls):
+            Review.all_reviews.clear()
