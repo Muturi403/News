@@ -1,6 +1,7 @@
 import os
 import urllib.request,json
-from .models import Source, Details
+import urllib.parse
+from app.models import Source, Details
 
 api_key = None
 details_url = None
@@ -50,7 +51,7 @@ def process_results(news_list):
         if pathToImage:
             news_object = Article(author,title,description,pathToImage,url,datePublished)
             news_results.append(news_object)
-        return news_results    
+    return news_results    
       
 def get_news_sources(category):
     '''
@@ -80,7 +81,7 @@ def process_sources_results(sources_list):
         id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
-        url = source_item.get('url')
+        url = source_item.get( 'url' )
         category = source_item.get('category')
         if category:
             source_object = Source(id,name,description,url,category)
