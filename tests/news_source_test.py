@@ -10,7 +10,7 @@ class NewsSourceTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_news_source = News_source('')
+        self.new_news_source = News_source('https: // nation.africa/kenya/news/hundreds-line-up-to-join-mashujaa-day-celebrations-amid-tight-security-2485374', 'Hundreds line up to join Mashujaa Day celebrations amid tight security','category','en','Kenya')
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news_source,News_source))
 

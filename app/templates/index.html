@@ -1,46 +1,37 @@
 {% extends 'base.html'%} 
 {% import 'macros.html' as macro%} 
-{% block styles%} {{super() }}
-
-{% endblock %} 
 
 {% block content %}
 
-<div class="container">
   <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>GENERAL NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(general_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>BUSINESS NEWS</strong></h3>
+    <div class="row">{{ macro. displaySourceList(business)}}</div>
   </div>
 
   <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>BUSINESS NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(business_sources)}}</div>
-  </div>
-
-  <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>ENTERTAINMENT NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(entertainment_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>ENTERTAINMENT NEWS</strong></h3>
+<div class="row">{{ macro.displaySourceList(entertainment)}}</div>
   </div> 
 
 	  <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>HEALTH NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(health_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>HEALTH NEWS</strong></h3>
+    <div class="row">{{ macro.displaySourceList(health)}}</div>
   </div>
 
 	  <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>SCIENCE NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(science_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>SCIENCE NEWS</strong></h3>
+    <div class="row">{{ macro.displaySourceList(science)}}</div>
   </div>
 
   <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>SPORTS NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(sports_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>SPORTS NEWS</strong></h3>
+    <div class="row">{{ macro.displaySourceList(sports)}}</div>
   </div>
 
   <div class="row pt-3">
-    <h3 style="font-size: 40px; color:#9933ff; text-align:center"><strong>TECHNOLOGY NEWS</strong></h3>
-    <div class="row">{{ macro.displayNewsSources(technology_sources)}}</div>
+    <h3 style="font-size: 40px; color:black; text-align:center"><strong>TECHNOLOGY NEWS</strong></h3>
+    <div class="row">{{ macro.displaySourceList(technology)}}</div>
   </div>
-</div>
+</div> 
 
 {% endblock %} 

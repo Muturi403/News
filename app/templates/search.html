@@ -5,15 +5,14 @@
     <div class="container">
 
         <div class="row">
-            <!-- Add count filter to count all items in a list -->
-            <h3> Found {{ news_details| count }} matches </h3>
-                <!-- Display all the news_details -->
+
+            <h3> Found {{ news_article| count }} matches </h3>
             <hr>
             <ul>
-                {{ macro.displayMovieList(movies)}}
+                {{ macro.displayNewsList(news)}}
             </ul>
 
         </div>
 
     </div>
-{% endblock %}
+{% endblock %} 

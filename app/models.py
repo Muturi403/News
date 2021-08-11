@@ -8,9 +8,9 @@ class Source:
         self.description = description
         self.url = url
         self.category = category        
-class Details:
+class Article:
     '''
-    Details class to define the details object
+    Articles class to define the articles object
     '''
     def _init_(self, author, title, description, pathtoImage, url, datePublished):
         self.author = author
@@ -20,8 +20,8 @@ class Details:
         self.url = url
         self.datePublished = datePublished
     
-    def save_details(self):
-        details.all_details.append(self)  
+    def save_article(self):
+        article.all_articles.append(self)  
         
 class Review:
   
